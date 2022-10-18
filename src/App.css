@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+
+*{
+  padding: 0px;
+  margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.app {
+  background-color: #222;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-list {
   display: flex;
   flex-direction: column;
+  /* background-color: #555; */
+  height: 100px;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  padding: 10px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.add-list input{
+  height: 40px;
+  width: 400px;
+  border-radius: 7px;
+  outline: none;
+  margin-top: 5px;
+  font-family: "Lato";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-list input::placeholder{
+  font-size: 1rem;
+  color: #000;
+text-align: center;
+}
+.add-list button{
+  height: 35px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #047aed;
+  color: #fff;
+  font-family: "lato";
+}
+.add-list button:hover{
+  transform: scale(1.1);
+  background-color: #1c3fa8;
+  transition: all 0.5s;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  height: 600px;
+  background-color: green;
+  width: 600px;
+}
+.todos-wrap{
+  display: flex;
+  height: 50px;
+  font-size: 1rem;
+  align-items: center;
+  gap: 25px;
+  padding-left: 50px;
+  background-color: transparent;
+  justify-content: center;
+}
+.todos-wrap h1{
+  padding: 3px;
+  font-family: "Lato";
+  color: #fff;
+
+}
+.todos-wrap button{
+
+  height: 35px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  /* background-color: #047aed; */
+  color: #fff;
+  font-family: "lato";
+
+}
+.delete{
+  background-color: red;
+}
+.completed{
+  background-color: green;
 }
