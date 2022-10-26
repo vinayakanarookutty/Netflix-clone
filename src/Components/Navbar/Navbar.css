@@ -1,0 +1,27 @@
+.navbar
+{
+   position: fixed;
+   height: 150px;
+   width: 100%;
+   display: flex;
+    top: 0;
+   
+   z-index: 100;
+}
+.logo
+{
+    top: 10px;
+    position: fixed;
+    left: 20px;
+    width: 80px;
+}
+.avatar
+{
+    top: 5px;
+    position: fixed;
+    right: 20px;
+    width: 30px;
+}
+.nav-black{
+    background-color: #111;
+}

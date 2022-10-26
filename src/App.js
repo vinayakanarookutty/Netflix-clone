@@ -1,62 +1,23 @@
-
-import './App.css';
-import { useState } from "react";
+import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import { orginals,action,Romance,Comedy,Horror,Documentary } from "./url";
+import "./App.css"
+import Banner from "./Components/banner/Banner";
+import Rowpost from "./Components/Rowpost/Rowpost";
 
 function App() {
-const [todolist,settodolist]=useState([]);
-const [newtask,setnewtask]=useState("")
-const handlechange=(event)=>{
-setnewtask(event.target.value);
-};
-const addtask=()=>{
- 
-  const task={
-    id: todolist.length === 0 ? 1 : todolist[todolist.length-1].id+1,
-    taskName: newtask,
-    completed:false
-  }
-  const newtodolist=[...todolist,task];
-  settodolist(newtodolist);
-};
-const deletetask=(taskid)=>{
-const newtodolist=todolist.filter((task)=>{
-return task.id !== taskid;
-});
-settodolist(newtodolist)
-};
-const completetask=(id)=>{
-  settodolist(
-    todolist.map((task)=>{
-      if (task.id===id){
-
-        return{...task,completed:true};
-      }
-      else{
-        return task;
-      }
-    })
-  )
-}
-  return (
-    <div className="app">
-      <div className="add-list">
-<input   onChange={handlechange} type='text' placeholder='Enter your task'></input>
-<button  onClick={() => newtask && addtask()}>Add Task</button>
+return(
+<div>
+  <Navbar/>
+  <Banner/>
+  <Rowpost url={orginals} title='Netflix Orginals'/>
+  <Rowpost  url={action}  title='Action' isSmall/>
+  <Rowpost url={Romance} title='Romance' isSmall/>
+  <Rowpost url={Comedy} title='Comedy' isSmall/>
+  <Rowpost url={Horror} title='Horror' isSmall/>
+  <Rowpost url={Documentary} title='Documentary' isSmall/>
 </div>
-
-<div className="list">
-{todolist.map((task)=>{
-  return(
-  <div  className={`todos-wrap ${task.completed && "completed"}`}>
-    <h1>{task.taskName}</h1>
-    <button onClick={()=> deletetask(task.id)} className='delete'>Delete</button>
-    <button onClick={()=> completetask(task.id)} className='completed'>completed</button>
-    </div>
-    )
-})}
-</div>
-    </div>
-  );
+);
 }
 
 export default App;
